@@ -1,0 +1,21 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Welcome to Study mode!</h1>
+
+    <h2>Chemistry</h2>
+
+    <h3>In the periodic table, what does Au stand for?</h3>
+
+    <div class="answer" id="myDIV"><b>Answer: Gold</b></div><button class="show-button" id="myBUT" onclick="myFunction()">?</button><br>
+
+
+
+    <a class="next-button" href="/studyquestion3">Next</a>&nbsp;&nbsp;<br>
+    <a class="edit-button" href="/edit">Edit</a>&nbsp;&nbsp;<br>
+    <a class="delete-button" href="/delete">Delete</a>&nbsp;&nbsp;<br>
+    <a class="add-button" href="/addquestion/<%= currentid %>&<%= currenttopic %>&<%= zero %>&<%= pickedcourse %>&<%= size %>">Add New Question</a>&nbsp;&nbsp;
+</div>
+
+
+<%- include("footer.ejs") %>

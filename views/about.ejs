@@ -1,0 +1,9 @@
+<%- include("header.ejs") %>
+
+<h3>Alexander Norrman</h3>
+
+<% for (const row of all) {%>
+    <b><%= row.topic %></b><br>
+<% } %>
+
+<%- include("footer.ejs") %>

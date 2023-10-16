@@ -1,0 +1,21 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Welcome to Study mode!</h1>
+
+    <h2><%= pickedcourse %></h2>
+
+    <h3><%= currentquestion %></h3>
+    
+    <div class="answer" id="myDIV"><b>Answer: <%= currentanswer %></b></div><button class="show-button" id="myBUT" onclick="myFunction()">?</button><br>
+
+
+    <a class="next-button" href="/studyquestion/<%= pickedcourse %>&<%= reverse %>">Previous</a>&nbsp;&nbsp;<a class="end-button" href="/study">End</a>&nbsp;&nbsp;<br>
+    <a class="edit-button" href="/edit2/<%= currentid %>&<%= zero %>&<%= pickedcourse %>">Edit</a>&nbsp;&nbsp;<br>
+    <a class="delete-button" href="/delete/<%= currentid %>&<%= zero %>&<%= pickedcourse %>&<%= size %>">Delete</a>&nbsp;&nbsp;<br>
+    <a class="add-button2" href="/addquestion/<%= currentid %>&<%= currenttopic %>&<%= zero %>&<%= pickedcourse %>&<%= size %>">+ New Question</a>&nbsp;&nbsp;
+    <br>
+</div>
+
+
+<%- include("footer.ejs") %>

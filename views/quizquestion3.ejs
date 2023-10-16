@@ -1,0 +1,16 @@
+<%- include("header.ejs") %>
+
+
+<div class="middle">
+    <h1>Welcome to Quiz mode!</h1>
+    <h2>Chemistry</h2>
+    <h3>In the periodic table, what does Au stand for?</h3>
+    
+    <form method="post" action="/quizquestion3p" autocomplete="off">
+        <label><b>Answer:</b></label>
+        <input type="text" name="answer"><br><br>
+        <input type="submit" value="Submit" class="add-button">
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

@@ -1,0 +1,20 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Welcome to Quiz mode!</h1>
+
+    <h2>Pick a subject!</h2>
+
+</div>
+
+<div class="column-left">
+    
+
+    <% for (const row of all) {%>
+        <a class="quiz-button" href="/quizcourse/<%= row.topic %>&0"><%= row.topic %></a>&nbsp;&nbsp;
+    <br>
+    <% } %>
+</div>
+
+
+<%- include("footer.ejs") %>

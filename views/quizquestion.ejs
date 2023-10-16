@@ -1,0 +1,22 @@
+<%- include("header.ejs") %>
+
+
+<div class="middle">
+    <h1>Welcome to Quiz mode!</h1>
+
+    <h2><%= pickedcourse %></h2>
+
+    <h3><%= currentquestion %></h3>
+    
+    <form method="post" action="/quizquestionp" autocomplete="off">
+        <label><b>Answer:</b></label>
+        <input type="text" class="quiz-input" name="answer"><br><br>
+        <input type="submit" value="Submit" class="add-button">
+        <input type="hidden" name="zero" value="<%= zero %>"><br><br>
+        <input type="hidden" name="pickedcourse" value="<%= pickedcourse %>"><br><br>
+        <input type="hidden" name="currentanswer" value="<%= currentanswer %>"><br><br>
+        <input type="hidden" name="points" value="<%= points %>"><br><br>
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

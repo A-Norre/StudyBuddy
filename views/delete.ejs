@@ -1,0 +1,25 @@
+<%- include("header.ejs") %>
+
+
+<div class="middle">
+    <h1>Delete Question</h1>
+
+    <form method="post" action="/deletep" autocomplete="off">
+        <label><b>Subject:</b></label>
+        <input class="del-input" type="text" name="topic" value="<%= currenttopic %>" readonly><br><br>
+        <label><b>Course:</b></label>
+        <input type="text" class="del-input" name="course" value="<%= currentcourse %>" readonly><br><br>
+        <label style="position: relative; left: -5px;"><b>Question:</b></label>
+        <input type="text" class="del-input" style="position: relative; left: -5px;" name="question" value="<%= currentquestion %>" readonly><br><br>
+        <label><b>Answer:</b></label>
+        <input type="text" class="del-input" name="answer" value="<%= currentanswer %>" readonly><br><br>
+        <input type="submit" value="Delete" class="delete-button2">
+        <input type="hidden" name="id" value="<%= id %>"><br><br>
+        <input type="hidden" name="zero" value="<%= zero %>"><br><br>
+        <input type="hidden" name="pickedcourse" value="<%= pickedcourse %>"><br><br>
+        <input type="hidden" name="size" value="<%= size %>"><br><br>
+
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

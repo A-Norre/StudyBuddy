@@ -1,0 +1,7 @@
+{
+    "host":     "LAPTOP-TIRV99EV.local",
+    "user":     "dbadm",
+    "password": "P@ssw0rd",
+    "database": "study",
+    "multipleStatements": true
+}

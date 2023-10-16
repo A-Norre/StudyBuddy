@@ -1,0 +1,23 @@
+<%- include("header.ejs") %>
+
+
+<div class="middle">
+    <h1>Edit Question</h1>
+
+    <form method="post" action="/editp" autocomplete="off">
+        <label><b>Subject:</b></label>
+        <input type="text" class="edit-input" name="topic" value="<%= currenttopic %>" required><br><br>
+        <label><b>Course:</b></label>
+        <input type="text" class="edit-input" name="course" value="<%= currentcourse %>" required><br><br>
+        <label style="position: relative; left: -5px;"><b>Question:</b></label>
+        <input type="text" class="edit-input" style="position: relative; left: -5px;" name="question" value="<%= currentquestion %>" required><br><br>
+        <label><b>Answer:</b></label>
+        <input type="text" class="edit-input" name="answer" value="<%= currentanswer %>" required><br><br>
+        <input type="submit" value="Save Changes" class="edit-button2">
+        <input type="hidden" name="id" value="<%= id %>"><br><br>
+        <input type="hidden" name="zero" value="<%= zero %>"><br><br>
+        <input type="hidden" name="pickedcourse" value="<%= pickedcourse %>"><br><br>
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

@@ -1,0 +1,27 @@
+<%- include("header.ejs") %>
+
+
+<div class="middle">
+    <h1>Welcome to Quiz mode!</h1>
+    <h2>Pick a course!</h2>
+</div>
+
+<div class="row">
+    <div class="column-left">
+        <% for (const row of all) {%>
+            <a class="quiz-button" href="/quizcourse/<%= row.topic %>&<%= zero %>"><%= row.topic %></a>&nbsp;&nbsp;
+            <br>
+        <% } %>
+       
+    </div>
+    <div class="column-right">
+        <% for (const row of courses) {%>
+            <% if(row.course!==null) {%>
+                <a class="quizcourse-button" href="/quizquestion/<%= row.course %>&<%= zero %>&<%= points %>"><%= row.course %></a>&nbsp;&nbsp;
+                <br>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

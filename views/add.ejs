@@ -1,0 +1,27 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Add question</h1>
+    <form method="post" action="/addp" autocomplete="off">
+        <label><b>Subject:</b></label>
+        <select name="add_topic" onchange="this.form.submit()">
+            <% for (const row of all) {%>
+                <option name="opt_course" value="<%= row.topic %>"><%= row.topic %></option>
+            <% } %>
+        </select><br><br>
+        <label><b>Course:</b></label>
+        <select name="add_course">
+            <% for (const row of all2) {%>
+                <option name="opt_course" value="<%= row.course %>"><%= row.course %></option>
+            <% } %>
+        </select><br><br>        <label style="position: relative; left: -5px;"><b>Question:</b></label>
+        <input class="add-input" type="text" style="position: relative; left: -5px;" name="add_quest" maxlength="100" required><br><br>
+        <label><b>Answer:</b></label>
+        <input class="add-input" type="text" name="add_answer" maxlength="100" required><br><br>
+        <input type="submit" value="+ Add Question" class="add-button">
+    </form>
+</div>
+
+<!-- onchange="this.form.submit()" -->
+
+<%- include("footer.ejs") %>

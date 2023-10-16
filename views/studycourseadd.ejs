@@ -1,0 +1,39 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Welcome to Study mode!</h1>
+    
+    <h2>Pick a course!</h2>
+</div>
+<div class="row">
+    <div class="column-left">
+        <form method="post" action="/studycourseaddp/<%= course %>&<%= zero %>" autocomplete="off">
+            <input class="study-add-2-button" type="submit" value="+ Add Subject">
+            <input class="input-study" type="text" maxlength="20" placeholder="Subject..." name="subject" required>
+        </form>
+
+        <% for (const row of all) {%>
+            <% if(course == row.topic) {%>
+                <a class="study-button-picked" href="/studycourse/<%= row.topic %>&<%= zero %>"><%= row.topic %></a>&nbsp;&nbsp;
+                <br>
+            <% } else { %>
+                <a class="study-button" href="/studycourse/<%= row.topic %>&<%= zero %>"><%= row.topic %></a>&nbsp;&nbsp;
+                <br>
+            <% } %>
+        <% } %>
+       
+    </div>
+    <div class="column-right">
+        <a class="study-add-button" href="/studycourseadd2/<%= course %>&<%= zero %>">+ New Course</a>&nbsp;&nbsp;
+
+        <% for (const row of courses) {%>
+            <a class="course-button" href="/studyquestion/<%= row.course %>&<%= zero %>"><%= row.course %></a>&nbsp;&nbsp;
+        <br>
+        <% } %>
+    </div>
+</div>
+
+
+
+
+<%- include("footer.ejs") %>

@@ -1,0 +1,461 @@
+body {
+    background-color: rgb(147, 206, 215);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.category {
+    color: green;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-button {
+    font-size: larger;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    background: #093b48;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.header-button2 {
+    font-size: larger;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    background: #5a036f;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.header-button3 {
+    font-size: larger;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    background: rgb(65, 162, 65);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.study-button {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    background: #093b48;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    /* border-style: solid; */
+    /* border-width: 6px; */
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.study-button-picked {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    background: #093b48;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.study-add-button {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    background: #43555a;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.study-add-2-button {
+    font-size: larger;
+    display: inline-block;
+    width: 155px;
+    background: #43555a;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    /* visibility: hidden; */
+}
+
+.input-study {
+    font-size: larger;
+    display: inline-block;
+    overflow-wrap: break-word;
+    background-color: #43555a;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+    resize: vertical;
+}
+
+.input-study:focus::placeholder {
+    color: transparent;
+}
+
+.input[type=text], select {
+    font-size: large;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.add-input {
+    font-size: large;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.course-button {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    /* height: 25px; */
+    background: #195c6f;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.quiz-button {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    /* height: 25px; */
+    background: #5a036f;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.quizcourse-button {
+    font-size: larger;
+    display: inline-block;
+    width: 135px;
+    /* height: 25px; */
+    background: #82219a;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.quiz-input {
+    font-size: large;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.next-button {
+    font-size: larger;
+    display: inline-block;
+    width: 115px;
+    height: 25px;
+    background: #031a09;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.end-button {
+    font-size: larger;
+    display: inline-block;
+    width: 115px;
+    height: 25px;
+    background: #093b48;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.edit-button {
+    font-size: larger;
+    display: inline-block;
+    width: 115px;
+    height: 25px;
+    background: #2f0c97;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.edit-input {
+    font-size: large;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.delete-button {
+    font-size: larger;
+    display: inline-block;
+    width: 115px;
+    height: 25px;
+    background: #c10c0c;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.delete-course-button {
+    font-size: larger;
+    display: inline-block;
+    width: 155px;
+    height: 25px;
+    background: #c10c0c;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.del-input {
+    font-size: large;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.add-button {
+    font-size: larger;
+    display: inline-block;
+    width: 175px;
+    height: 50px;
+    background: rgb(65, 162, 65);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    border: none;
+}
+
+.add-button2 {
+    font-size: larger;
+    display: inline-block;
+    width: 175px;
+    height: 25px;
+    background: rgb(65, 162, 65);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    border: none;
+}
+
+.edit-button2 {
+    font-size: larger;
+    display: inline-block;
+    height: 50px;
+    background: #2f0c97;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    border: none;
+}
+
+.delete-button2 {
+    font-size: larger;
+    width: 115px;
+    height: 50px;
+    background: #c10c0c;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    border: none;
+}
+
+.show-button {
+    position: relative;
+    font-size: larger;
+    width: 50px;
+    height: 50px;
+    background: #ff0cc6;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    border: none;
+    visibility: visible;
+}
+
+.answer {
+    visibility: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.middle {
+    text-align: center;
+}
+
+.middle1 {
+    right: 100px;
+    /* text-align: center; */
+}
+
+.column-left {
+    float: left;
+    /* margin-left: 20%; */
+    margin-left: 30%;
+    width: 20%;
+    text-align: center;
+}
+
+.column-right {
+    float: right;
+    /* margin-right: 20%; */
+    margin-right: 30%;
+    width: 20%;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.column-right2 {
+    float: right;
+    /* margin-right: 20%; */
+    margin-right: 30%;
+    width: 20%;
+    text-align: center;
+    margin-top: -32px;
+}
+  
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */

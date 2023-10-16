@@ -1,0 +1,24 @@
+<%- include("header.ejs") %>
+
+<div class="middle">
+    <h1>Welcome to Study mode!</h1>
+
+    <h2>Pick a subject!</h2>
+</div>
+
+<div class="column-left">
+    <!-- <div class="study-add-button" id="myBUT" onclick="addFunction()">+ Add Subject</div>&nbsp;&nbsp; -->
+    <!-- <a class="study-add-button" href="/studyadd">+ Add Subject</a>&nbsp;&nbsp; -->
+        <form method="post" action="/studyaddp" autocomplete="off">
+            <input class="study-add-2-button" type="submit" value="+ Add Subject">
+            <input class="input-study" type="text" maxlength="20" placeholder="Subject..." name="subject" required>
+        </form>
+
+    <% for (const row of all) {%>
+        <a class="study-button" href="/studycourse/<%= row.topic %>&0"><%= row.topic %></a>&nbsp;&nbsp;
+    <br>
+    <% } %>
+</div>
+
+
+<%- include("footer.ejs") %>
