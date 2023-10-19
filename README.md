@@ -29,13 +29,13 @@ npm install express ejs
 * Inside /config open folder /db 
 * Find the file study.json
 * Change the content of this file to match and connect to your own database
-* To initiate the database run the command below (make sure you are placed in the project folder ProjectStudyBuddy)
+* To initiate the database run the command below (make sure you are placed in the project folder StudyBuddy)
 ```
 mariadb --table < sql/study.sql
 ```
 
 ## Starting the program
-* To start the program run the command below (make sure you are placed in the project folder ProjectStudyBuddy)
+* To start the program run the command below (make sure you are placed in the project folder StudyBuddy)
 ```
 node index.js
 ```
