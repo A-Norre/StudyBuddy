@@ -50,7 +50,7 @@ http://localhost:1339/study
 * Paste the url in the browser and refresh the browser
 
 ## Stopping the program
-* To stop the program open your terminal and use the following two keys together
+* To stop the program open your terminal and use the following two keys together:
 ctrl + c
 
 ## Author
