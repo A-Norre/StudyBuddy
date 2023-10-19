@@ -2,7 +2,7 @@
 
 <div class="middle">
     <h1>Add question</h1>
-    <form method="post" action="/add2p&<%= zero %>" autocomplete="off">
+    <form method="post" action="/add2p&<%= zero %>&<%= currenttopic %>&<%= currentcourse %>" autocomplete="off">
         <label><b>Subject:</b></label>
         <input class="add-input" type="text" name="add_topic" value="<%= currenttopic %>" required readonly><br><br>
         <label><b>Course:</b></label>

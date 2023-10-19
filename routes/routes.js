@@ -58,8 +58,19 @@ router.get("/quizquestion/:course&:zero&:points", async (req, res) => {
     
     data.courses = await quiz.fetchquestion(req.params.course);
     console.log(data.courses);
+    console.log(req.params.zero);
+    console.log(data.courses.length);
 
     if (parseInt(req.params.zero) == (data.courses.length-1)) {
+        data.currentquestion = data.courses[req.params.zero].quest
+        data.currentanswer = data.courses[req.params.zero].answer
+        data.currentid = data.courses[req.params.zero].id
+        data.zero = parseInt(req.params.zero);
+        data.reverse = parseInt(req.params.zero)-1;
+        data.points = parseInt(req.params.points);
+        data.size = data.courses.length;
+        res.render("quizquestionend.ejs", data);
+    } else if (parseInt(req.params.zero) == (data.courses.length-2) && data.courses[0].quest == null) {
         data.currentquestion = data.courses[req.params.zero].quest
         data.currentanswer = data.courses[req.params.zero].answer
         data.currentid = data.courses[req.params.zero].id
@@ -113,6 +124,8 @@ router.post("/quizquestionp", (req, res) => {
     }
 
     if (parseInt(req.body.size) == (parseInt(req.body.zero)+1)) {
+        res.redirect("/quizquestionfinish&"+points+"&"+req.body.size+"&"+req.body.pickedcourse);
+    } else if (parseInt(req.body.size) == (parseInt(req.body.zero)+2)) {
         res.redirect("/quizquestionfinish&"+points+"&"+req.body.size+"&"+req.body.pickedcourse);
     } else {
         let sendTo = "/quizquestion/" + req.body.pickedcourse + "&" + req.body.zero + "&" + points;
@@ -377,9 +390,21 @@ router.get("/studyquestion3", (req, res) => {
 
 
 
-router.post("/add2p&:zero", async (req, res) => {
+router.post("/add2p&:zero&:topic&:course", async (req, res) => {
+    let data = {};
+
     console.log(req.body);
     // console.log(req.body.add_course);
+    console.log("lade den till?");
+    console.log(req.params.course);
+    data.all = await quiz.fetchquestion(req.params.course);
+    console.log(data.all.length);
+    if (data.all.length == 1 && data.all[0].quest == null) {
+        console.log("TOM!");
+        await quiz.deleteQuestion(data.all[0].id);
+        console.log("removedfirst!");
+    }
+    console.log("len");
     await quiz.addQuestion(req.body);
     res.redirect("/studyquestion/" + req.body.currentcourse + "&" + req.params.zero);
 });
