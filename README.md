@@ -1,4 +1,4 @@
-# Project Study Buddy
+# Study Buddy
 
 ## Dependencies
 
@@ -11,7 +11,7 @@
 * Place yourself in the folder you want to download the project/program to
 * Clone the GitHub repository to the folder you are placed in with the command below
 ```
-git clone git@github.com:A-Norre/ProjectStudyBuddy.git
+git clone https://github.com/A-Norre/StudyBuddy
 ```
 
 ## Set up
