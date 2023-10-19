@@ -13,6 +13,10 @@
 ```
 git clone https://github.com/A-Norre/StudyBuddy
 ```
+* Enter the project with the command below
+```
+cd StudyBuddy
+```
 
 ## Set up
 * To initiate the project run the command below and press ENTER on every question
@@ -29,6 +33,7 @@ npm install express ejs
 * Inside /config open folder /db 
 * Find the file study.json
 * Change the content of this file to match and connect to your own database
+* Return to the project folder StudyBuddy
 * To initiate the database run the command below (make sure you are placed in the project folder StudyBuddy)
 ```
 mariadb --table < sql/study.sql
