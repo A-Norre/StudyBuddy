@@ -11,7 +11,7 @@
 * Place yourself in the folder you want to download the project/program to
 * Clone the GitHub repository to the folder you are placed in with the command below
 ```
-git clone url
+git clone git@github.com:A-Norre/ProjectStudyBuddy.git
 ```
 
 ## Set up
