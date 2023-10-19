@@ -57,6 +57,7 @@ router.get("/quizquestion/:course&:zero&:points", async (req, res) => {
     data.pickedcourse = req.params.course;
     
     data.courses = await quiz.fetchquestion(req.params.course);
+    console.log(data.courses);
 
     if (parseInt(req.params.zero) == (data.courses.length-1)) {
         data.currentquestion = data.courses[req.params.zero].quest
@@ -68,13 +69,23 @@ router.get("/quizquestion/:course&:zero&:points", async (req, res) => {
         data.size = data.courses.length;
         res.render("quizquestionend.ejs", data);
     } else  {
-        data.currentquestion = data.courses[req.params.zero].quest
-        data.currentanswer = data.courses[req.params.zero].answer
-        data.currentid = data.courses[req.params.zero].id
-        data.size = data.courses.length;
-        data.zero = parseInt(req.params.zero)+1;
-        data.reverse = parseInt(req.params.zero)-1;
-        data.points = parseInt(req.params.points);
+        if (data.courses[req.params.zero].quest == null) {
+            data.currentquestion = data.courses[(parseInt(req.params.zero)+1)].quest
+            data.currentanswer = data.courses[(parseInt(req.params.zero)+1)].answer
+            data.currentid = data.courses[(parseInt(req.params.zero)+1)].id
+            data.size = data.courses.length;
+            data.zero = parseInt((parseInt(req.params.zero)+1))+1;
+            data.reverse = parseInt((parseInt(req.params.zero)+1))-1;
+            data.points = parseInt(req.params.points);
+        } else {
+            data.currentquestion = data.courses[req.params.zero].quest
+            data.currentanswer = data.courses[req.params.zero].answer
+            data.currentid = data.courses[req.params.zero].id
+            data.size = data.courses.length;
+            data.zero = parseInt(req.params.zero)+1;
+            data.reverse = parseInt(req.params.zero)-1;
+            data.points = parseInt(req.params.points);
+        }
         res.render("quizquestion.ejs", data);
     }
 });
@@ -89,7 +100,8 @@ router.post("/quizquestionp", (req, res) => {
     // console.log(req.body.zero);
     // console.log(req.body.size);
     let points = 0;
-    if (req.body.answer == req.body.currentanswer) {
+    
+    if (req.body.answer.toLowerCase() == req.body.currentanswer.toLowerCase() && req.body.currentanswer != null) {
         console.log("SCORE!");
         points = req.body.points;
         points = parseInt(points) + 1;
@@ -101,7 +113,7 @@ router.post("/quizquestionp", (req, res) => {
     }
 
     if (parseInt(req.body.size) == (parseInt(req.body.zero)+1)) {
-        res.redirect("/quizquestionfinish&"+points+"&"+req.body.size);
+        res.redirect("/quizquestionfinish&"+points+"&"+req.body.size+"&"+req.body.pickedcourse);
     } else {
         let sendTo = "/quizquestion/" + req.body.pickedcourse + "&" + req.body.zero + "&" + points;
 
@@ -117,11 +129,21 @@ router.post("/quizquestionp", (req, res) => {
 //     res.redirect("quizquestionfinish&"+ points);
 // });
 
-router.get("/quizquestionfinish&:points&:size", (req, res) => {
+router.get("/quizquestionfinish&:points&:size&:course", async (req, res) => {
     let data = {};
+    console.log(req.params.course);
+
+    data.courses = await quiz.fetchquestion(req.params.course);
+    console.log(data.courses[0]);
+
+    if (data.courses[0].quest == null) {
+        data.size = parseInt(req.params.size)-1;
+    } else {
+        data.size = req.params.size;
+    }
 
     data.points = req.params.points;
-    data.size = req.params.size;
+
     if (req.params.size == 1) {
         data.question = "question";
     } else {
@@ -262,7 +284,6 @@ router.get("/studyquestion/:course&:zero", async (req, res) => {
         data.reverse = parseInt(req.params.zero)-1;
         data.size = parseInt(data.courses.length);
         res.render("studyquestionend2empty.ejs", data);
-
     } 
     else if ((parseInt(data.courses.length) == 1)) {
         data.currentquestion = data.courses[req.params.zero].quest
@@ -322,7 +343,25 @@ router.get("/addquestion/:id&:topic&:zero&:course&:size", async (req, res) => {
     data.currenttopic = req.params.topic;
     data.currentcourse = req.params.course;
     data.all = await quiz.fetchtopic(req.params.topic);
-    if (parseInt(req.params.zero != 0)) {
+
+    if (data.all[0].course == null) {
+        data.all.shift();
+    }
+
+    console.log(req.params.course);
+    let findIndex = 0;
+    
+    for (let i = 0; i < data.all.length; i++) {
+        if (data.all[i].course == req.params.course) {
+            findIndex = i;
+        }
+    }
+
+    data.all.splice(findIndex, 1);
+
+    console.log(findIndex);
+
+    if (parseInt(req.params.zero) != 0) {
         data.zero = parseInt(req.params.zero)-1;
     } else {
         data.zero = parseInt(req.params.zero);

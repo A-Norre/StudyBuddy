@@ -7,6 +7,7 @@
         <input class="add-input" type="text" name="add_topic" value="<%= currenttopic %>" required readonly><br><br>
         <label><b>Course:</b></label>
         <select name="add_course" placeholder="Course..." required>
+            <option name="opt_course" value="<%= currentcourse %>"><%= currentcourse %></option>
             <% for (const row of all) {%>
                 <option name="opt_course" value="<%= row.course %>"><%= row.course %></option>
             <% } %>
